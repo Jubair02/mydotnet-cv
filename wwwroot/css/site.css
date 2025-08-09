@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3436;
+  background-color: #f7f9fc;
+  line-height: 1.6;
+}
+
+/* CV Styles */
+.cv-container {
+  max-width: 1140px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.cv-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #00b894;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.header-section::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, #00b894, transparent);
+}
+
+.profile-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-list li i {
+  margin-right: 10px;
+  color: #00b894;
+  transition: transform 0.2s ease;
+}
+
+.contact-list li:hover i {
+  transform: scale(1.2);
+}
+
+.contact-list a {
+  color: #2d3436;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.contact-list a:hover {
+  color: #00b894;
+}
+
+.contact-list a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #00b894;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.contact-list a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00b894;
+  border-bottom: none;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #00b894, #00cec9);
+  border-radius: 2px;
+}
+
+/* Education Section */
+.degree {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.degree::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #00b894, #00cec9);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: top;
+}
+
+.degree:hover::before {
+  transform: scaleY(1);
+}
+
+.degree:hover {
+  background-color: #f7f9fc;
+  padding-left: 20px;
+}
+
+.degree-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.institution {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.gpa {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Skills Section */
+.skill-group {
+  margin-bottom: 15px;
+}
+
+.skill-group p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.skills-list, .language-list, .interests-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li, .language-list li, .interests-list li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+
+.skills-list li:before, .language-list li:before, .interests-list li:before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  color: #00b894;
+  font-weight: normal;
+  transition: transform 0.3s ease;
+}
+
+.skills-list li:hover:before, .language-list li:hover:before, .interests-list li:hover:before {
+  transform: scale(1.2);
+}
+
+.skills-list li, .language-list li, .interests-list li {
+  transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.skills-list li:hover, .language-list li:hover, .interests-list li:hover {
+  transform: translateX(5px);
+  padding-left: 25px;
+}
+
+/* Projects Section */
+.project {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.project:hover {
+  background-color: #f7f9fc;
+  border-color: #e1e8ed;
+  transform: translateX(5px);
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Extracurricular Section */
+.organization {
+  margin-bottom: 25px;
+}
+
+.organization-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.role {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #00b894;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.role:hover {
+  padding-left: 25px;
+  background-color: #f7f9fc;
+  border-radius: 0 8px 8px 0;
+}
+
+.role-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.role-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-list {
+    flex-direction: column;
+  }
+  
+  .contact-list li {
+    margin-right: 0;
+  }
+  
+  .cv-container {
+    padding: 15px;
+    margin: 15px;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+}

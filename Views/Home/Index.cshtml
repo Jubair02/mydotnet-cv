@@ -1,0 +1,131 @@
+@model CVApp.Models.CVModel
+@{
+    ViewData["Title"] = "CV - " + Model.PersonalInfo.Name;
+}
+
+<div class="cv-container">
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="profile-image">
+                    <img src="/images/jubair.jpg" alt="Profile Picture" class="img-fluid rounded-circle" />
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h1 class="name">@Model.PersonalInfo.Name</h1>
+                <p class="description">@Model.PersonalInfo.Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-section">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="contact-list">
+                    <li><i class="bi bi-telephone-fill"></i> @Model.PersonalInfo.Phone</li>
+                    <li><i class="bi bi-envelope-fill"></i> @Model.PersonalInfo.Email</li>
+                    <li><i class="bi bi-linkedin"></i> <a href="@Model.PersonalInfo.LinkedIn_Url" target="_blank">@Model.PersonalInfo.LinkedIn</a></li>
+                    <li><i class="bi bi-github"></i> <a href="@Model.PersonalInfo.Github_Url" target="_blank">@Model.PersonalInfo.Github</a></li>
+                    <li><i class="bi bi-geo-alt-fill"></i> @Model.PersonalInfo.Address</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-6">
+            <!-- Education Section -->
+            <div class="section education-section">
+                <h2 class="section-title">EDUCATION</h2>
+                @foreach (var degree in Model.Education.Degrees)
+                {
+                    <div class="degree">
+                        <h3 class="degree-title">@degree.Title</h3>
+                        <p class="institution">@degree.Institution</p>
+                        <p class="gpa">@degree.GPA, @degree.Year</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Technical Skills Section -->
+            <div class="section skills-section">
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+                <div class="skill-group">
+                    <p><strong>Programming Languages:</strong> @Model.TechnicalSkills.ProgrammingLanguages</p>
+                    <p><strong>Web Technologies:</strong> @Model.TechnicalSkills.WebTechnologies</p>
+                    <p><strong>Databases:</strong> @Model.TechnicalSkills.Databases</p>
+                    <p><strong>Frameworks:</strong> @Model.TechnicalSkills.Frameworks</p>
+                </div>
+            </div>
+
+            <!-- Soft Skills Section -->
+            <div class="section soft-skills-section">
+                <h2 class="section-title">SOFT SKILLS</h2>
+                <ul class="skills-list">
+                    @foreach (var skill in Model.SoftSkills.Skills)
+                    {
+                        <li>@skill</li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Languages Section -->
+            <div class="section languages-section">
+                <h2 class="section-title">LANGUAGE</h2>
+                <ul class="language-list">
+                    @foreach (var language in Model.Languages.LanguageList)
+                    {
+                        <li>@language</li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Areas of Interest Section -->
+            <div class="section interests-section">
+                <h2 class="section-title">AREAS OF INTEREST</h2>
+                <ul class="interests-list">
+                    @foreach (var interest in Model.AreasOfInterest.Interests)
+                    {
+                        <li>@interest</li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+            <!-- Projects Section -->
+            <div class="section projects-section">
+                <h2 class="section-title">PROJECTS</h2>
+                @foreach (var project in Model.Projects)
+                {
+                    <div class="project">
+                        <h3 class="project-title">@project.Title</h3>
+                        <p class="project-description">@project.Description</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Extracurricular Activities Section -->
+            <div class="section extracurricular-section">
+                <h2 class="section-title">EXTRACURRICULAR ACTIVITIES</h2>
+                @foreach (var org in Model.ExtraCurricularActivities.Organizations)
+                {
+                    <div class="organization">
+                        <h3 class="organization-name">@org.Name</h3>
+                        @foreach (var role in org.Roles)
+                        {
+                            <div class="role">
+                                <h4 class="role-title">@role.Title</h4>
+                                <p class="role-description">@role.Description</p>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
