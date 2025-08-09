@@ -175,73 +175,73 @@ namespace CVApp.Models
 
     public class PersonalInfo
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string LinkedIn { get; set; }
-        public string LinkedIn_Url { get; set; }
-        public string Github { get; set; }
-        public string Github_Url { get; set; }
-        public string Address { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string LinkedIn { get; set; } = string.Empty;
+        public string LinkedIn_Url { get; set; } = string.Empty;
+        public string Github { get; set; } = string.Empty;
+        public string Github_Url { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
     }
 
     public class Education
     {
-        public List<Degree> Degrees { get; set; }
+        public List<Degree> Degrees { get; set; } = new List<Degree>();
     }
 
     public class Degree
     {
-        public string Title { get; set; }
-        public string Institution { get; set; }
-        public string GPA { get; set; }
-        public string Year { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Institution { get; set; } = string.Empty;
+        public string GPA { get; set; } = string.Empty;
+        public string Year { get; set; } = string.Empty;
     }
 
     public class Project
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
     }
 
     public class TechnicalSkills
     {
-        public string ProgrammingLanguages { get; set; }
-        public string WebTechnologies { get; set; }
-        public string Databases { get; set; }
-        public string Frameworks { get; set; }
+        public string ProgrammingLanguages { get; set; } = string.Empty;
+        public string WebTechnologies { get; set; } = string.Empty;
+        public string Databases { get; set; } = string.Empty;
+        public string Frameworks { get; set; } = string.Empty;
     }
 
     public class SoftSkills
     {
-        public List<string> Skills { get; set; }
+        public List<string> Skills { get; set; } = new List<string>();
     }
 
     public class Languages
     {
-        public List<string> LanguageList { get; set; }
+        public List<string> LanguageList { get; set; } = new List<string>();
     }
 
     public class AreasOfInterest
     {
-        public List<string> Interests { get; set; }
+        public List<string> Interests { get; set; } = new List<string>();
     }
 
     public class ExtraCurricularActivities
     {
-        public List<Organization> Organizations { get; set; }
+        public List<Organization> Organizations { get; set; } = new List<Organization>();
     }
 
     public class Organization
     {
-        public string Name { get; set; }
-        public List<Role> Roles { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public List<Role> Roles { get; set; } = new List<Role>();
     }
 
     public class Role
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
     }
 }
